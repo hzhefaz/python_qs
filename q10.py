@@ -17,8 +17,7 @@ df['Weight'] = df['Weight'].fillna(mean_weight)
 df['Height'] = df['Height'].fillna(mean_height)
 
 # Create a new column "BMI"
-df['BMI'] = df['Weight'] / (df['Height'] ** 2) * 100
-
+df['BMI'] = df['Height'] * 100 / df['Weight'] ** 2
 # Make another column "Obesity"
 def classify_obesity(bmi):
     if bmi <= 3:
